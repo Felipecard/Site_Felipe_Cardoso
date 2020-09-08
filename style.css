@@ -1,0 +1,683 @@
+body {
+	font-family: 'Pangolin', cursive;
+}
+
+/* ==================================   MENU   ===========================================   */
+
+header {
+	background-color: #82bffc;
+	padding: 20px;
+	height: 100px;
+}
+
+.img_logo {
+	width: 240px;
+    display: flex;
+	margin-top: -20px;
+	margin-left: -20px;
+}
+
+.img_logo:hover {
+	opacity: 0.5;
+	transition: 400ms;
+}
+
+
+/* ------- ul do Menu ----   */
+
+
+.menu {
+    width: 100%;
+    height: 50px;
+    font-style: normal;
+    display: flex;
+    font-size: 25px;
+}
+
+.menu ul {
+    list-style: none;
+	position: relative;
+	left: 25%;
+	top: -100px;
+}
+
+.menu ul li {
+    width: 150px;
+	float: left;
+	
+}
+
+.menu a {
+    padding: 15px;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.menu a:hover {
+    color: #000000
+}
+
+.menu ul ul {
+    position: absolute;
+	visibility: hidden;
+	top: 50px;
+
+}
+
+.menu ul li:hover ul {
+	visibility: visible;
+	background-color: #82bffc;
+	font-size: 20px;
+}
+
+.menu ul ul li {
+    float: none;
+    border-bottom: solid 1px #ccc;
+}
+
+/* ------- Botoes Redes Sociais ----   */
+
+
+.redes_sociais_cabec {
+	display: inline;
+	left: 88%;
+	cursor: pointer;
+}
+
+.redes_sociais_cabec ul {
+	float: right;
+}
+
+.redes_sociais_cabec ul li {
+	display: inline; 
+}
+
+.r_d_cabec, .r_d_cabec2 {
+	width: 50px;
+}
+
+.r_d_cabec:hover, .r_d_cabec2:hover {
+	opacity: 0.5;
+	transition: 400ms;
+}
+
+/* ===================================   RODAPE  ==============================================   */
+
+footer {
+	background: #4484c4;
+	padding: 30px 0;
+}
+
+.logo_rodape {
+	width: 200px;
+	margin-left: 30px;
+}
+
+.linha {
+    position: absolute;
+    width: 120px;
+    height: 2px;
+	top: 50px;
+	left: -300px;
+    background: #ffffff;
+    transform: rotate(-90deg);
+}
+
+
+.redes_sociais {
+	display: inline;
+	position: absolute;
+	margin-left: 300px;
+
+}
+
+.redes_sociais li {
+	display: inline;
+}
+
+.linkedin, .github, .instagram {
+	width: 50px;
+	margin-top: 10px;	
+}
+
+.linkedin:hover, .github:hover, .instagram:hover {
+	opacity: 0.5;
+	transition: 400ms;
+}
+
+.linkedin, .github {
+	width: 60px;
+}
+
+.copyright {
+	color: #FFFFFF;
+	font-size: 20px;
+	margin: 20px 0 0;
+	background-color: #206ab4;
+	text-align: center;
+	position: bottom;
+}
+
+@media(max-width: 1000px) {
+    .redes_sociais {
+		position: relative;
+		text-align: center;
+	}
+	
+	.logo_rodape {
+		text-align: center;
+	}
+}
+
+
+
+/* ====================================    HOME    ==========================================*/
+
+/* ==== SLIDE ====*/
+
+.slideJS {
+    float: right;
+    margin: 0 auto 0 0;
+    width: 100%;
+    height: 500px;
+    background: #000;
+    overflow: hidden; 
+}
+
+#imagemFundo {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    transition: 1s;
+}
+
+#txtImagem {
+    position: absolute;
+    font-size: 40px;
+	line-height: 47px;
+	letter-spacing: .1em;
+    color: rgb(7, 7, 7);           
+	
+	top: 140px;
+	left: 10%;
+	width: 900px;
+}
+
+#txtImagem2 {
+    position: absolute;
+    font-size: 35px;
+    line-height: 47px;
+    color: rgb(255, 255, 255);           
+	letter-spacing: .1em;
+
+	top: 200px;
+    left: 10px;
+}
+
+#txtImagem3 {
+    position: absolute;
+    font-size: 35px;
+    line-height: 47px;
+    color: rgb(255, 255, 255);           
+	letter-spacing: .1em;
+
+	top: 150px;
+	left: -10px;
+}
+
+#botoes {
+	float: none;
+	position: relative; 
+	list-style: none;
+	display: flex;
+	/* topo | direita | inferior | esquerda */
+	margin: 520px 0 0 42%;
+	padding-right: 10px;
+}
+
+#selec, #naoselec {
+    cursor: pointer;
+    font-size: 25px;
+    
+    margin-left: 30px;  
+}
+
+#anel {
+    border: 4px solid #ff7675;
+	box-sizing: border-box;
+	border-radius: 50%;
+
+	width: 45px;
+	height: 45px;
+	
+	padding-left: 40px;
+	margin-top: -12px;
+	margin-left: -31px;
+	margin-right: 0;
+	
+	padding-right: 5px;
+	float: inline-start;	
+}
+
+.anterior, .proximo {
+	color: #3f96ec;
+	font-size: 70px;
+	cursor: pointer;
+	position: absolute;
+}
+
+.anterior:hover, .proximo:hover {
+	color: #ff7675;
+}
+
+.anterior {
+	margin-left: 32%;
+	margin-top: -60px;
+}
+
+.proximo {
+	margin-left: 60%;
+	margin-top: -60px;
+}
+
+#ash {
+	width: 200px;
+	margin-top: 430px;
+	margin-left: 0;
+}
+
+#ash2 {
+	width: 200px;
+	margin-top: 430px;
+	margin-left: 40%;
+}
+
+#ash3 {
+	width: 200px;
+	margin-top: 410px;
+	margin-left: 90%;
+}
+
+
+
+
+/* ==== CORPO ====*/
+
+
+.titulo-principal {
+	position: relative;
+	text-align: center;
+	font-size: 3em; /* em = 2x o tamanho da fonte do resto*/
+	top: 100px;
+}
+
+.titulo-onde-moro {
+	position: relative;
+	text-align: center;
+	font-size: 3em;
+	top: 10px;
+}
+
+.mapa {
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 70px;	
+}
+
+.onde_moro {
+	background: linear-gradient(#ffffff, #82bffc);
+}
+
+.video {
+	height: 100px;
+}
+
+/* ==== SKILLS ====*/
+
+.imagem-eu {
+	border-radius: 200px;
+	border: 10px solid #758eff;
+	width: 250px;
+	opacity: 1;
+	transition: 400ms;
+	box-shadow: 10px 10px 10px 0 #979393;
+	float: right;
+	margin-right: 70px;
+	margin-top: 220px;
+}
+
+.imagem-eu:hover {
+	opacity: 0.8;
+	border: 10px solid #a4a5f5;
+}
+
+.skill_bigode {
+	background: #ffffff;
+	
+}
+
+.skills {
+	margin-bottom: 100px;
+	margin-top: 150px;
+	
+}
+
+.skills h3 {
+	margin-bottom: 5px;
+	margin-left: 15%;
+	font-size: 20px;
+}
+
+.barras {
+	width: 45%;
+	background-color: rgb(209, 222, 245);
+	margin-left: 15%;
+	border-radius: 10px;
+	margin-bottom: 20px;
+}
+
+.skills h3:hover {
+	font-size: 22px;
+}
+
+.bar {
+	text-align: right;
+	padding-top: 4px;
+	padding-bottom: 10px;
+	color: rgb(0, 0, 0);
+	border-radius: 5px;
+}
+
+.rede { width: 60%; background-color: #ff7675; }
+.html { width: 75%; background-color: #ff7675; }
+.css { width: 70%; background-color: #ff7675; }
+.js { width: 60%; background-color: #ff7675; }
+.py { width: 70%; background-color: #ff7675; }
+.git { width: 60%; background-color: #ff7675; }
+.react { width: 15%; background-color: #ff7675; }
+.jquery { width: 10%; background-color: #ff7675; }
+
+
+/* =====================================  GITHUB  ============================================= */
+
+
+.body_produtos {
+	background: url("img/papel_bigode.png");
+	background-size: 100%;
+}
+
+.produtos {
+	width: 800px;
+	margin: 0 auto;
+	padding: 50px 0;
+	text-decoration: black;	
+}
+
+.img_py {
+	width: 120px;
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+.produtos li {
+	display: inline-block;
+	text-align: center;
+	width: 30%;
+	vertical-align: top;
+	margin: 0 1.5%;
+	padding: 30px 20px;
+	box-sizing: border-box;
+	border: 7px solid #ff7675;
+	border-radius: 10px;
+	margin-left: 10px;
+	text-decoration: none;
+	color: rgb(0, 0, 0);
+	background-color: white;
+	height: 350px;
+}
+
+.produtos li:hover {               
+	border-color: #fab0b0;
+}
+
+.produtos li:active {              
+	border-color: rgb(105, 105, 167);
+}
+
+.produtos li:hover h2 {
+	font-size: 32px;
+}
+
+.produtos h2 {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.produto-descricao, .produto-descricao-py {
+	font-size: 18px;
+	margin-bottom: 30px;
+}
+
+.produto-descricao-py {
+	margin-bottom: 46px;
+}
+
+
+
+/* =========================================   GAMES   =========================================*/
+
+.body_games {
+	background: url("img/fundo_games.png");
+}
+
+.vader {
+	width: 150px;
+	margin-left: 200px;
+}
+
+.luke {
+	width: 200px;
+	margin-left: 80px;
+	opacity: 0.5;
+}
+
+.luke:hover {
+	opacity: 1;
+	transition: 400ms;
+}
+
+#botaoFire {
+	margin-left: 170px;
+	font-size: 20px;
+	width: 200px;
+	cursor: pointer;
+	background: #000000;
+	color: #FFFFFF;
+}
+
+
+/* ------    fogo   ---------*/
+
+table {
+	position: absolute;
+	border-collapse: collapse;
+	border: 1px solid #000;
+	margin-left: 400px;
+	margin-top: -103px;
+}
+
+td {
+	width: 50px;
+	height: 50px;
+	border: 1px solid #000;
+	text-align: center;
+	vertical-align: center;
+	font-family: monospace;
+	font-size: 18px;
+	position: relative;
+}
+
+.pixel-index {
+	font-size: 10px;
+	display: inline-block;
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	color: #999;
+}
+
+td.pixel {
+	width: 4px;
+	height: 4px;
+	border: 0;
+}
+
+
+/* ------    Botoes Jogos   ---------*/
+
+.botao {
+	margin-top: 30px;
+}
+
+.botao_pedra, .botao_cobra, .botao_forca {
+	display: inline-block;
+	width: 600px;
+	height: 100px;
+	text-decoration: none;
+    background-color: #ff7675;
+    color: rgb(0, 0, 0);
+    border: 0;
+    border-radius: 0.5em;
+    box-shadow: 3px 3px 0 1px rgb(25, 25, 26);
+	transition: box-shadow 0.3s ease, transform 0.3s ease;
+	margin-top: 30px;
+	margin-left: 30px;
+	font-family: 'Montserrat';
+}
+
+.botao_pedra {
+	margin-left: 20%;
+}
+
+.botao_cobra {
+	margin-left: 10%;
+}
+
+.botao_forca {
+	margin-left: 50px;
+	margin-bottom: 70px;
+}
+
+.botao_pedra:hover, .botao_cobra:hover, .botao_forca:hover {
+	background-color: #f19494;
+}
+
+.botao_pedra:active, .botao_cobra:active, .botao_forca:active {
+	box-shadow: 0 0 0 0 rgb(25, 25, 26), inset 3px 3px 3px rgb(25, 25, 26);
+    transform: translate(3px, 3px);
+}
+
+.txt_games {
+	float: left;
+	width: 50%;
+	margin-top: 30px;
+	margin-left: 30px;
+	font-size: 25px;
+	color: white;
+	font-family: 'Pangolin', cursive;
+}
+
+.img_pedra, .img_games {
+	width: 100px;
+	float: right;
+	margin-right: 10px;
+}
+
+.img_pedra {
+	margin-top: 15px;
+}
+
+
+/* =========================================  CONTATO  ========================================== */
+
+.pag-contato {
+	margin-left: 40px;
+}
+
+form {
+	margin: 40px 0;
+}
+
+form label, form legend {
+	display: block;
+	font-size: 20px;
+	margin: 0 0 10px;
+}
+
+.input-padrao {
+	display: block;
+	margin: 0 0 20px;
+	padding: 10px 25px;
+	width: 50%
+}
+
+.checkbox {
+	margin: 25px;
+}
+
+.enviar {
+	width: 30%;
+	padding: 15px 0;
+	background: #ff7675;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	border: none;
+	border-radius: 5px;
+	transition: 1s all;
+	cursor: pointer;
+}
+
+.enviar:hover {
+	background: rgb(228, 73, 73);
+	transform: scale(1.1);
+	
+}
+
+table---- {
+	margin: 20px 0 40px;
+}
+
+thead {
+	background: #555555;
+	color: white;
+	font-weight: bold;
+}
+
+td---, th {
+	border: 1px solid #000000;
+	padding: 8px 15px 
+}
+
+.email {
+	color: #ffffff;
+	font-size: 20px;
+	margin: 40px 0 0;
+	background-color: #ff8585;
+	text-align: center;
+	position: bottom;
+	margin-top: 10px;
+}
+
+.img_carteiro {
+	float: right;
+	width: 400px;
+}
+
+
+
+
+

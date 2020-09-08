@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Jogo da Forca ☠</title>
+    <style>
+        body {
+            margin-left: 50px;
+            margin-top: 10px;
+        }
+
+        .btn {
+            background-color: rgba(0, 0, 0, 0.4);
+            height: 30%;
+            color: #fff;
+            cursor: pointer;
+            outline: none;
+            margin: 10px;
+            border: none;
+        }
+
+        .letra {
+            width: 30px;
+            font-size: 30px;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 5px;
+            display: none;
+            outline: none;
+        }
+
+        .letraj {
+            width: 30px;
+            font-size: 30px;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 5px;
+        }
+
+        #dvdisplay {
+            display: block;
+        }
+
+        #dvForca {
+            position: absolute;
+            left: 150px;
+        }
+
+        #cabeca {
+            position: absolute;
+            top: -63px;
+            left: 215px;
+        }
+
+        #corpo {
+            position: absolute;
+            top: 30px;
+            left: 255px;
+        }
+
+        #bracoe {
+            position: absolute;
+            top: 30px;
+            left: 178px;
+        }
+
+        #bracod {
+            position: absolute;
+            top: 30px;
+            left: 255px;
+        }
+
+        #pernae {
+            position: absolute;
+            top: 120px;
+            left: 176px;
+        }
+
+        #pernad {
+            position: absolute;
+            top: 120px;
+            left: 256px;
+        }
+
+        #titulo {
+            text-align: center;
+        }
+
+        #forca {
+            position: absolute;
+            top: -130px;
+            left: 250px;
+        }
+
+        #dvmsg {
+            font-size: 25px;
+        }
+
+        #bb {
+            margin-top: 200px;
+            font-size: 15px;
+        }
+
+    </style>
+    <script>
+        var biblioteca = ["coruja", "hipopotamo", "girafa", "amarelo", "azul", "hamburguer", "pizza", "arroz", "privada", "sabonete", "banheira"];
+        var dcs = ["Animais", "Animais", "Animais", "Cores", "Cores", "Cores", "Comida", "Comida", "Comida", "Tem no banheiro", "Tem no banheiro"];
+        var qtde = biblioteca.length - 1;
+        var pos = Math.round(Math.random() * qtde);
+        var palavra = biblioteca[pos];
+        var dicas = dcs[pos];
+        var tam = palavra.length;
+        var cxLetras = [];
+        var acertos;
+        var errosMax = 7;
+        var erros = 0;
+        var desenho = [];
+        var acertou = false;
+        var jogando = false;
+        var jog;
+        function defineLetras(l) {
+            var obj;
+            for (var i = 0; i < 20; i++) {
+                obj = document.getElementById("letra" + i).value = "";
+                obj = document.getElementById("letra" + i).style.display = "none";
+            }
+            for (var i = 0; i < l; i++) {
+                obj = document.getElementById("letra" + i).style.display = "inline-block";
+            }
+        }
+        function jogar() {
+            jog = document.getElementById("letraj");
+            jog.focus();
+            if (jog.value == "") {
+                alert("Digite a letra");
+            }
+            else {
+                if (jogando) {
+                    var obj;
+                    var letraTmp;
+                    var letra;
+                    var pesq;
+                    letra = jog.value;
+                    jog.value = "";
+                    acertou = false;
+                    pesq = palavra.match(letra);
+                    document.getElementById("dvletrasdigitadas").innerHTML += letra.toUpperCase() + " ";
+                    while (pesq != null) {
+                        letraTmp = palavra.search(letra);
+                        obj = document.getElementById("letra" + letraTmp).value = letra;
+                        palavra = palavra.replace(letra, '0');
+                        acertos++;
+                        pesq = palavra.match(letra);
+                        acertou = true;
+                    }
+                    if (!acertou) {
+                        erros++;
+
+                        if (erros < 7) {
+                            desenho[erros].style.display = "block";
+                        }
+                        else {
+                            document.getElementById("cabeca").src = "img/cabeca2.png";
+                            document.getElementById("dvmsg").innerHTML = "<strong>☠☠ VOCÊ MORREU ⚰⚰</strong>";
+                            jogando = false;
+                        }
+                    }
+                    if (acertos == tam) {
+                        document.getElementById("dvmsg").innerHTML = "";
+                        document.getElementById("dvmsg").innerHTML = "<strong>🏁 PARABÉNS, VOCÊ GANHOU!!</strong>";
+                        jogando = false;
+                    }
+                }
+            }
+        }
+
+        function inicia() {
+            jogando = true;
+            jog = document.getElementById("letraj");
+            jog.value = "";
+            jog.focus();
+            acertos = 0;
+            erros = 0;
+            acertou = false;
+            document.getElementById("dvletrasdigitadas").innerHTML = " ";
+            pos = Math.round(Math.random() * qtde);
+            palavra = biblioteca[pos];
+            tam = palavra.length;
+            dicas = dcs[pos];
+            defineLetras(tam);
+            document.getElementById("dvmsg").innerHTML = "";
+            desenho[1] = document.getElementById("cabeca");
+            desenho[2] = document.getElementById("corpo");
+            desenho[3] = document.getElementById("bracoe");
+            desenho[4] = document.getElementById("bracod");
+            desenho[5] = document.getElementById("pernae");
+            desenho[6] = document.getElementById("pernad");
+            document.getElementById("cabeca").src = "img/cabeca.png";
+            for (var i = 1; i < 7; i++) {
+                desenho[i].style.display = "none";
+            }
+            for (var i = 0; i < 20; i++) {
+                document.getElementById("letra" + i).setAttribute('readonly', true);
+            }
+            addEventListener("keydown",verificatecla);
+
+        }
+        function verificatecla(){
+            var tecla=event.keyCode;
+            if(tecla == 13){
+                jogar();
+            }
+        }
+        function Dica() {
+            alert(dicas);
+            jog.focus();
+        }
+        window.addEventListener("load", inicia);
+
+    </script>
+</head>
+
+<body>
+    <h2 id="titulo">☠ Jogo da Forca ☠</h2>
+    <div id="dvmenu" class="dvdisplay">
+        <button onclick="inicia()" class="btn">Nova Palavra</button>
+    </div>
+    <div id="dvpalavra" class="dvdisplay">
+        <input type="text" id="letra0" class="letra" maxlength="1">
+        <input type="text" id="letra1" class="letra" maxlength="1">
+        <input type="text" id="letra2" class="letra" maxlength="1">
+        <input type="text" id="letra3" class="letra" maxlength="1">
+        <input type="text" id="letra4" class="letra" maxlength="1">
+        <input type="text" id="letra5" class="letra" maxlength="1">
+        <input type="text" id="letra6" class="letra" maxlength="1">
+        <input type="text" id="letra7" class="letra" maxlength="1">
+        <input type="text" id="letra8" class="letra" maxlength="1">
+        <input type="text" id="letra9" class="letra" maxlength="1">
+        <input type="text" id="letra10" class="letra" maxlength="1">
+        <input type="text" id="letra11" class="letra" maxlength="1">
+        <input type="text" id="letra12" class="letra" maxlength="1">
+        <input type="text" id="letra13" class="letra" maxlength="1">
+        <input type="text" id="letra14" class="letra" maxlength="1">
+        <input type="text" id="letra15" class="letra" maxlength="1">
+        <input type="text" id="letra16" class="letra" maxlength="1">
+        <input type="text" id="letra17" class="letra" maxlength="1">
+        <input type="text" id="letra18" class="letra" maxlength="1">
+        <input type="text" id="letra19" class="letra" maxlength="1">
+    </div>
+    <hr>
+    <div id="dvjogador" class="dvdisplay">
+        <div id="controlesJogador">
+            <label for="letraj">Digite a letra: </label><br>
+            <input type="text" id="letraj" class="letraj" maxlength="1">
+            <button onclick="jogar()" class="btn">Jogar</button>
+            <button onclick="Dica()" class="btn">Dica</button>
+            <div id="dvmsg"></div><br>
+            <div><strong>Letras digitadas: </strong> </div>
+            <div id="dvletrasdigitadas"> </div>
+            <div id="dvForca">
+                <img id="forca" src="img\forca.png">
+                <img id="cabeca" src="img\cabeca.png">
+                <img id="corpo" src="img\corpo.png">
+                <img id="bracoe" src="img\bracoe.png">
+                <img id="bracod" src="img\bracod.png">
+                <img id="pernae" src="img\pernae.png">
+                <img id="pernad" src="img\pernad.png">
+            </div>
+        </div>
+        <p id="bb">Colaboracão: Rafael Melo</p>
+</body>
+
+</html>

@@ -1,0 +1,250 @@
+
+
+/* ---------------------------------------   MENU   -------------------------------------------   */
+
+label[for="menu_resp"] {
+    color: white;
+    font-size: 50px;
+    margin-left: 150px;
+}
+
+label[for="menu_resp"]:hover {
+    color: #000000;
+}
+
+#menu_resp {
+    display: none;
+}
+
+label[for="menu_resp"] {
+    display: none;
+}
+
+@media(max-width: 800px) {
+
+    header {
+        height: 50px;
+        max-width: 100%;
+    }
+
+    label[for="menu_resp"] {
+        display: block;
+        float: left;
+        margin-top: 5px;
+    }
+
+    #menu_resp:checked ~ .menu {
+        margin-left: -100px;
+    }
+
+    .menu {
+        /* -120% para o menu sumir da tela   */
+        margin-top: 180px;
+        margin-left: -150%;
+        transition: all .4s;
+    }
+
+    .menu ul li {
+        width: 100%;
+        background-color: #82bffc;
+        float: left;
+    }
+    .menu ul ul {
+        position: absolute;
+        overflow: hidden;
+        max-height: 0;
+        transition: all .4s;
+    }
+
+    .menu ul li:hover ul {
+        height: auto;
+        max-height: 200px;
+    }
+
+    .menu ul li:hover ul {
+        left: 280px;
+    }
+
+    .img_logo {
+        position: absolute !important;
+        left: 30px;
+        top: 30px;
+        width: 120px;
+    }
+
+    .redes_sociais_cabec ul {
+        float: right;
+    }
+
+    .r_d_cabec, .r_d_cabec2 {
+        width: 40px;
+    }
+
+}
+
+
+
+/* ---------------------------------------   RODAPE   ------------------------------------------   */
+
+
+@media(max-width: 800px) {
+
+    .logo_rodape {
+        display: none;
+    }
+
+    .linha {
+        top: 15px;
+        transform: none;
+        left: -180px;
+    }
+
+}
+
+
+/* ---------------------------------------   HOME   ------------------------------------------   */
+
+/* --------   SLIDE  -------   */
+
+
+@media(max-width: 800px) {
+
+
+    #txtImagem {
+        position: flex;
+        font-size: 20px;
+        top: 170px;
+        left: 10px;
+        width: 350px;
+    }
+
+    #txtImagem2 {
+        font-size: 20px;
+        top: 150px;
+        left: 20px;
+    }
+
+    #txtImagem3 {
+        font-size: 20px;
+        top: 160px;
+        left: 20px;
+    }
+
+    #ash, #ash2, #ash3 {
+        display: none;
+    }
+
+    .anterior {
+        margin-left: 0;
+        margin-top: -60px;
+    }
+    
+    .proximo {
+        margin-left: 80%;
+        margin-top: -60px;
+    }
+
+    #botoes {
+        /* topo | direita | inferior | esquerda */
+        margin: 520px 0 0 30%;   
+    }
+
+    /* ==== CORPO ====*/
+    .imagem-beneficios {
+        width: 100%;
+    }
+
+    .titulo-onde-moro {
+        top: 50px;
+    }
+
+    .mapa {
+        width: 100%;
+    }
+
+    /* ==== SKILLS ====*/
+
+    .imagem-eu {
+        width: 200px;
+        margin-right: 20%;
+        margin-top: 140px;
+    }
+
+    .skills {
+        margin: 0 auto;
+        margin-top: 440px;
+    }
+
+    .barras {
+        width: 80%;
+    }
+}
+
+
+
+/* ---------------------------------------   GITHUB   ------------------------------------------   */
+
+@media(max-width: 800px) {
+
+    .body_produtos {
+        width: 100%;
+    }
+
+    .produtos {
+        width: 100%;
+        padding: 50px 0; 	
+        margin-left: 50px; 
+    }
+
+    .produtos li {
+        width: 250px;
+        height: 300px;
+        display: block;
+        margin-top: 30px;
+        text-decoration: none;
+    }
+
+}
+
+
+/* ---------------------------------------   GAMES   ------------------------------------------   */
+
+
+@media(max-width: 800px) {
+    .botao_pedra, .botao_cobra, .botao_forca {
+        width: 300px;
+    }
+
+    .txt_games {
+        font-size: 30px;
+        width: 250px;
+        font-family: 'Pangolin', cursive;
+    }
+    
+    .img_games, .img_pedra {
+        display: none;
+    }
+
+    .vader {
+        margin-left: 100px;
+        width: 100px;
+    }
+
+    #botaoFire {
+        margin-left: 70px;
+    }
+
+    table {
+        margin-left: 300px;
+    }
+	
+}
+
+
+/* ---------------------------------------   CONTATO  ------------------------------------------   */
+
+@media(max-width: 950px) {
+    .img_carteiro {
+        display: none;
+    }
+}
